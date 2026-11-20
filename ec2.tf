@@ -22,7 +22,10 @@ resource "aws_instance" "web" {
     systemctl enable --now apache2
   EOF
 
-  tags = { Name = "capstone-web-server" }
+  tags = { 
+    Name        = "capstone-web-server"
+    Environment = "dev"
+  }
 }
 
 output "public_ip" {
